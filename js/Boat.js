@@ -1,33 +1,32 @@
-
-//  
- class Boat {
-  constructor(x, y, width, height, boatPos) {
+// 7. Altere o valor da opção (option) dentro da classe Boat
+class Boat {
+  constructor(x, y, width, height,) {
     var options = {
-      restitution: 0.8,
-      friction: 1.0,
-      density: 1.0,
+      isStatic : true
     };
 
+
+   
     this.body = Bodies.rectangle(x, y, width, height, options);
     this.width = width;
     this.height = height;
+   
+   // 8. Adicione a variável this.boatPosition para obter as posições aleatórias do navio a partir do código. 
+   
 
-    this.boatPosition = boatPos;
-    this.image = loadImage("assets/boat.png");
+    
     World.add(world, this.body);
   }
 
-
+// 8.1 Na função display(), use push() e pop() em Boat.js
   display() {
-    var angle = this.body.angle;
+   
     var pos = this.body.position;
   
-    push();
+    
     translate(pos.x, pos.y);
     rotate(angle);
-    imageMode(CENTER);
-    image(this.image, 0, this.boatPosition, this.width, this.height);
-    noTint();
-    pop();
+    rectMode(CENTER);
+    
   }
 }
