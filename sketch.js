@@ -24,7 +24,7 @@ function setup() {
   cannon = new Cannon(180, 110, 100, 50, angle);
 
 // 9.crie um objeto de navio 
-  boat = new Boat(width, height - 100, 200, 200, -100);
+
   
 }
 
@@ -37,13 +37,13 @@ function draw() {
   Engine.update(engine);
   ground.display();
 
-//  11. Defina a velocidade do navio dentro da função draw() 
+//  11. Defina a velocidade do navio dentro da função draw() complete..
   Matter.Body.setVelocity(boat.body, {
-    x: -0.9,
-    y: 0
+    
+    
   });
   // 10. Exiba esse objeto na função draw()
-  boat.display()
+  
 
   for (var i = 0; i < balls.length; i++) {
     showCannonBalls(balls[i], i);
